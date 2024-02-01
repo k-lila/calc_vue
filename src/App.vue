@@ -5,10 +5,10 @@
         <h1>Calculadora Aritmética</h1>
       </div>
       <div class="calculadora__calc inputs">
-        <div class="inputs__num">
+        <div>
           <input type="number" v-model="num1" @change="atualizaNum">
         </div>
-        <div class="inputs__select">
+        <div>
           <select v-model="operator" @click="atualizaNum">
             <option value="+">+</option>
             <option value="-">-</option>
@@ -16,7 +16,7 @@
             <option value="/">/</option>
           </select>
         </div>
-        <div class="inputs__num">
+        <div>
           <input type="number" v-model="num2" @change="atualizaNum">
         </div>
       </div>
@@ -55,15 +55,13 @@
   }
 </script>
 
-
-
 <style lang="less" scoped>
+
   *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-
   .container {
     height: 90vh;
     position: relative;
@@ -96,8 +94,19 @@
   }
 
   .inputs {
-    background-color: black;
-
+    justify-content: space-around;
+    padding: 1%;
+    input,
+    select {
+      font-size: 125%;
+      padding: 2px;
+      border: 2px solid black;
+      border-radius: 3px;
+      background-color: transparent;
+    }
+    input {
+      max-width: 200px;
+    }
   }
 
 </style>
